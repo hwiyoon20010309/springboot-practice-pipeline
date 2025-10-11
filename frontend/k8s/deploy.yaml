@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sk089-springboot-practice-pipeline
+  name: sk089-myfirst-frontend
   namespace: skala-practice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sk089-springboot-practice-pipeline
+      app: sk089-myfirst-frontend
   template:
     metadata:
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port: '8080'
+        prometheus.io/port: '8081'
         prometheus.io/path: '/actuator/prometheus'
-        update: d8c8d2f0
+        update: 7f4d31a4
       labels:
-        app: sk089-springboot-practice-pipeline
+        app: sk089-myfirst-frontend
     spec:
       serviceAccountName: default
       containers:
-      - name: springboot-practice-pipeline
-        image: amdp-registry.skala-ai.com/skala25a/sk089-springboot-practice-pipeline:1.0.0
+      - name: myfirst-frontend
+        image: amdp-registry.skala-ai.com/skala25a/sk089-myfirst-frontend:1.0.0
         imagePullPolicy: Always
         env:
+        - name: LOGGING_LEVEL
+          value: DEBUG
         - name: USER_NAME
           value: sk089
         - name: NAMESPACE
           value: skala-practice
-        - name: SPRING_PROFILES_ACTIVE  
-          value: "prod"  

@@ -1,6 +1,6 @@
 #!/bin/bash
-NAME=sk089
-IMAGE_NAME="springboot-practice-pipeline"
+NAME=sk199
+IMAGE_NAME="myfirst-api-server"
 VERSION="1.0.0"
 
 CPU_PLATFORM=amd64
