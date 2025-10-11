@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAME=sk089
-IMAGE_NAME="springboot-practice-pipeline"
+NAME=sk199
+IMAGE_NAME="myfirst-api-server"
 VERSION="1.0.0"
 
 DOCKER_REGISTRY="amdp-registry.skala-ai.com/skala25a"

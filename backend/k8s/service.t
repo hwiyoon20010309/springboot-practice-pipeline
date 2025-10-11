@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sk089-springboot-practice-pipeline
-  namespace: skala-practice
+  name: ${USER_NAME}-${SERVICE_NAME}
+  namespace: ${NAMESPACE}
 spec:
   selector:
-    app: sk089-springboot-practice-pipeline
+    app: ${USER_NAME}-${SERVICE_NAME}
   ports:
     - name: http
       protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: ${CONTAINER_PORT}
+      targetPort: ${CONTAINER_PORT}
     - name: mgmt
       protocol: TCP
       port: 8081
