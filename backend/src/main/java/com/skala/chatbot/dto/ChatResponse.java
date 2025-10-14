@@ -1,7 +1,19 @@
-package main.java.com.skala.chatbot.dto;
+package com.skala.chatbot.dto;
 
 public class ChatResponse {
-    private String reply;
-    public ChatResponse(String reply) { this.reply = reply; }
-    public String getReply() { return reply; }
+    private String response;
+
+    public ChatResponse() {}
+
+    public ChatResponse(String response) {
+        this.response = response;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
 }

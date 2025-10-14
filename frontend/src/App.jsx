@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import "./styles/chat.css";
-import ChatBox from "./components/ChatBox";
+import React from "react";
+import ChatApp from "./components/ChatApp.jsx";
 
 function App() {
   return (
-    <div className="app">
-      <h1>AI Chatbot 💬</h1>
-      <ChatBox />
+    <div className="app-container">
+      <h2 className="app-title">💬 SKALA ChatBot</h2>
+      <ChatApp />
     </div>
   );
 }

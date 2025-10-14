@@ -1,77 +1,91 @@
-.app {
+.app-container {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: "Arial", sans-serif;
+}
+
+.app-title {
   text-align: center;
-  margin-top: 50px;
+  color: #0078ff;
 }
 
 .chat-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  height: 500px;
+  overflow: hidden;
+  background-color: #fafafa;
 }
 
 .chat-box {
-  border: 1px solid #ccc;
-  width: 400px;
-  height: 400px;
-  overflow-y: auto;
+  flex: 1;
   padding: 10px;
-  margin-bottom: 10px;
-}
-
-.msg {
-  margin: 5px 0;
-  padding: 5px 10px;
-  border-radius: 8px;
-  max-width: 80%;
-}
-
-.msg.user {
-  background-color: #d1e7dd;
-  align-self: flex-end;
-}
-
-.msg.ai {
-  background-color: #e2e3e5;
-  align-self: flex-start;
-}
-
-.input-box {
+  overflow-y: auto;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 10px 16px;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input button:hover {
+  background-color: #005fcc;
 }
 
 .message-bubble {
   display: flex;
-  flex-direction: column;
-  margin: 8px 0;
-  padding: 8px 12px;
-  border-radius: 12px;
-  max-width: 80%;
-  word-break: break-word;
-  font-family: 'Segoe UI', sans-serif;
+  margin: 6px 0;
 }
 
 .message-bubble.user {
-  background-color: #d1e7dd;
-  align-self: flex-end;
-  text-align: right;
+  justify-content: flex-end;
 }
 
-.message-bubble.ai {
-  background-color: #f5f5f5;
-  align-self: flex-start;
-  text-align: left;
+.message-bubble.bot {
+  justify-content: flex-start;
 }
 
-.sender-label {
-  font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 2px;
+.bubble-content {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
 }
 
-.message-text {
-  font-size: 1rem;
-  color: #222;
-  margin: 0;
+.message-bubble.user .bubble-content {
+  background-color: #0078ff;
+  color: white;
+  border-bottom-right-radius: 0;
 }
 
+.message-bubble.bot .bubble-content {
+  background-color: #e5e5ea;
+  color: black;
+  border-bottom-left-radius: 0;
+}
